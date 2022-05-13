@@ -122,3 +122,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Specify where succesful logins should redirect to
+LOGIN_REDIRECT_URL = '/venues/'
+# Specify where logouts should redirect to
+LOGOUT_REDIRECT_URL = '/'
