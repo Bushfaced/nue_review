@@ -17,8 +17,9 @@ def home(request):
 
 @login_required
 def venues_index(request):
-    # venues.all
-    return render(request, 'venues/index.html')
+   venues = Venue.objects.all()
+  #  venues = Venue.objects.filter(user=request.user)
+   return render(request, 'venues/index.html', {'venues': venues})
 
 @login_required
 def venues_detail(request, venue_id):
@@ -30,7 +31,7 @@ def venues_detail(request, venue_id):
 
 class VenueCreate(LoginRequiredMixin, CreateView):
     model = Venue
-    fields = ['user', 'date', 'description', 'name', 'amenities']
+    fields = ['name', 'description', 'date']
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)

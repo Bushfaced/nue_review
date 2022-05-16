@@ -7,18 +7,18 @@ from datetime import date
 # Create your models here.
 
 AMENITY_CATEGORY = (
-  ('H', 'Health'),
-  ('F', 'Food'),
-  ('D', 'Drinks'),
-  ('M', 'Misc'),
+  ('Health', 'Health'),
+  ('Food', 'Food'),
+  ('Drinks', 'Drinks'),
+  ('Misc', 'Misc'),
 )
 
 class Amenity(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(
-    max_length=1,
+    max_length=19,
     choices=AMENITY_CATEGORY         
-)
+    )
     def get_absolute_url(self):
      return reverse('amenities_detail', kwargs={'pk': self.id})
 
@@ -31,6 +31,7 @@ class Venue(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField('Visit Date')
     amenities = models.ManyToManyField(Amenity)
+ 
 
     def __str__(self):
         return f'{self.name} ({self.id})'

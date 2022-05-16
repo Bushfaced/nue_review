@@ -2,6 +2,65 @@
 {% block content %}
 
 
+  <div class="card-action">
+    <p>Description: {{ venue.description }}</p>
+    <p>Name: {{ venue.name }}</p>
+    <p>Date: {{ venue.date }}</p>
+    <p>Amenities: {{ venue.amenity }}</p>
+   
+
+    {% if user == venue.user %}
+    <a href="{% url 'venues_update' venue.id %}">Edit</a>
+    {% endif %}
+    <div class="row">
+      <div class="col s6">
+        <h3>{{ venue.name }}'s Amenities</h3>
+        {% if venue.amenities.count %}
+          {% for amenity in venue.amenities.all %}
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">
+                  {{ amenity.name }}
+                </span>
+              </div>
+              <div class="card-action">
+                <form action="{% url 'unassoc_amenity' venue.id amenity.id %}" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn">Remove</button>
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h5>No Amenities Yet! :(</h5>
+        {% endif %}
+      </div>
+      <!-- Available amenities will come after this line -->
+      <div class="col s6">
+        <h3>Available Amenities</h3>
+        {% if amenities.count %}
+          {% for amenity in amenities.all %}
+            <div class="card">
+              <div class="card-content">
+                <span class="card-title">
+                  A {{ amenity.name }}
+                </span>
+              </div>
+              <div class="card-action">
+                <form action="{% url 'assoc_amenity' venue.id amenity.id %}" method="POST">
+                  {% csrf_token %}
+                  <button type="submit" class="btn">Add</button>
+                </form>
+              </div>
+            </div>
+          {% endfor %}
+        {% else %}
+          <h5>{{venue.name}} Already Has All Amenities Available</h5>
+        {% endif %}
+      </div>
+    </div>
+  
+
 
 
 {% endblock %}
