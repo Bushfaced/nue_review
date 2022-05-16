@@ -18,9 +18,11 @@
                     <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Nue Review</a></li>
                 </ul>
                 <ul class="right">
-                  <li>TESTING</li>
                   {% if user.is_authenticated %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    <li><a href="{% url 'venues_create' %}">Add a Venue</a></li>
+                    <li><a href="{% url 'index' %}">View All Venues</a></li>
+                    <li><a href="{% url 'amenities_index' %}">View All Amenities</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>        
                   {% else %}
                     <li><a href="{% url 'signup' %}">Sign Up</a></li>
                     <li><a href="{% url 'login' %}">Log In</a></li>
