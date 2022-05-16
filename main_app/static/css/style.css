@@ -3,6 +3,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
+
   h1 {
     padding-left: 30px;
   }
@@ -17,9 +18,12 @@ body {
   }
 
   nav {
-    background-color: #ffa31a;
-    color: black;
+    background-color: #292929;
   }
+
+  nav .brand-logo {
+  color: #ffa31a;
+}
 
   .row {
     width: 800px;

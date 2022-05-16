@@ -7,7 +7,6 @@
     <p>Name: {{ venue.name }}</p>
     <p>Date: {{ venue.date }}</p>
     <p>Amenities: {{ venue.amenity }}</p>
-   
 
     {% if user == venue.user %}
     <a href="{% url 'venues_update' venue.id %}">Edit</a>
