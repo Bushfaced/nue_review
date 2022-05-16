@@ -17,8 +17,11 @@ class Amenity(models.Model):
     name = models.CharField(max_length=100)
     category = models.CharField(
     max_length=1,
-    choices=AMENITY_CATEGORY
+    choices=AMENITY_CATEGORY         
 )
+    def get_absolute_url(self):
+     return reverse('amenities_detail', kwargs={'pk': self.id})
+
     
 
 

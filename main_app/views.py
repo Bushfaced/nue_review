@@ -26,7 +26,7 @@ def venues_detail(request, venue_id):
     id_list = venue.amenities.all().values_list('id')
     amenities_venue_doesnt_have = Amenity.objects.exclude(id__in=id_list)
     return render(request, 'venues/detail.html',
-    {'venue': venue,'amenities': amenities_venues_doesnt_have})
+    {'venue': venue,'amenities': amenities_venue_doesnt_have})
 
 class VenueCreate(LoginRequiredMixin, CreateView):
     model = Venue
@@ -41,7 +41,7 @@ class VenueUpdate(LoginRequiredMixin, UpdateView):
 
 class VenueDelete(LoginRequiredMixin, DeleteView):
     model = Venue
-    success_url: '/venues/'
+    success_url = '/venues/'
 
 @login_required
 def assoc_amenity(request, venue_id, amenity_id):
