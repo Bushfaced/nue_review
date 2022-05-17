@@ -3,6 +3,7 @@
 
 <h1>Amenity Details</h1>
 
+
 <div class="row">
   <div class="col s6 col-offset-3">
     <div class="card">
@@ -10,10 +11,15 @@
         <span class="card-title">{{ amenity.name }}</span>
         <p>Category: {{ amenity.category }}</p>
       </div>
-      <div class="card-action">
-        <a href="{% url 'amenities_update' amenity.id %}">Edit</a>
-        <a href="{% url 'amenities_delete' amenity.id %}">Delete</a>
-      </div>
+      {% if user == venue.user %}
+        <form action="{% url 'unassoc_amenity' venue.id amenity.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn">Remove</button>
+        <div class="card-action">
+          <a href="{% url 'amenities_update' amenity.id %}">Edit</a>
+          <a href="{% url 'amenities_delete' amenity.id %}">Delete</a>
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>

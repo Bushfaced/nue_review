@@ -13,12 +13,15 @@ AMENITY_CATEGORY = (
   ('Misc', 'Misc'),
 )
 
+
 class Amenity(models.Model):
     name = models.CharField(max_length=100)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(
     max_length=19,
-    choices=AMENITY_CATEGORY         
+    choices=AMENITY_CATEGORY
     )
+
     def get_absolute_url(self):
      return reverse('amenities_detail', kwargs={'pk': self.id})
 
@@ -31,10 +34,10 @@ class Venue(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField('Visit Date')
     amenities = models.ManyToManyField(Amenity)
- 
 
     def __str__(self):
         return f'{self.name} ({self.id})'
+
     def get_absolute_url(self):
         return reverse('detail', kwargs={'venue_id': self.id})
 
