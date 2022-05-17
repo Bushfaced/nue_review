@@ -55,4 +55,5 @@ class Comment(models.Model):
     date = models.DateField('Visit Date')
     content = models.CharField('comment', max_length=200)
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
