@@ -27,8 +27,13 @@ def venues_detail(request, venue_id):
     venue = Venue.objects.get(id=venue_id)
     id_list = venue.amenities.all().values_list('id')
     amenities_venue_doesnt_have = Amenity.objects.exclude(id__in=id_list)
-    return render(request, 'venues/detail.html',
-    {'venue': venue,'amenities': amenities_venue_doesnt_have})
+    comment_form = CommentForm()
+    return render(request, 'venues/detail.html', {
+      'comment_form': comment_form,
+      'venue': venue,
+      'amenities': amenities_venue_doesnt_have
+  })
+
 
 class VenueCreate(LoginRequiredMixin, CreateView):
     model = Venue

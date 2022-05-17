@@ -52,7 +52,7 @@ class Photo(models.Model):
 
 
 class Comment(models.Model):
-    date = models.DateField('date')
-    content = models.CharField(max_length=200)
-    venue = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField('Visit Date')
+    content = models.CharField('comment', max_length=200)
+    venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
 

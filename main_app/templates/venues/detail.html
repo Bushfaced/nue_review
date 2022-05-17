@@ -99,10 +99,10 @@
       </thead>
       <tbody>
         {% for comment in venue.comment_set.all %}
-        <tr>
-          <td>{{comment.date}}</td>
-          <td>{{comment.content}}</td>
-        </tr>
+          <tr>
+            <td>{{comment.date}}</td>
+            <td>{{comment.content}}</td>
+          </tr>
         {% endfor %}
       </tbody>
     </table>
