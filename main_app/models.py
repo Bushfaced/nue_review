@@ -16,7 +16,6 @@ AMENITY_CATEGORY = (
 
 class Amenity(models.Model):
     name = models.CharField(max_length=100)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.CharField(
     max_length=19,
     choices=AMENITY_CATEGORY
@@ -24,8 +23,6 @@ class Amenity(models.Model):
 
     def get_absolute_url(self):
      return reverse('amenities_detail', kwargs={'pk': self.id})
-
-    
 
 
 class Venue(models.Model):
@@ -54,5 +51,8 @@ class Photo(models.Model):
 
 
 
-
+class Comment(models.Model):
+    date = models.DateField('date')
+    content = models.CharField(max_length=200)
+    venue = models.ForeignKey(User, on_delete=models.CASCADE)
 

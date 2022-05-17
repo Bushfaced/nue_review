@@ -10,6 +10,7 @@ import os
 import uuid
 import boto3
 from .models import Venue, Amenity, Photo
+from .forms import CommentForm
 # Create your views here.
 
 def home(request):
@@ -89,7 +90,14 @@ def add_photo(request, venue_id):
       print(e)
   return redirect('detail', venue_id=venue_id)
 
-
+@login_required
+def add_comment(request, venue_id):
+  form = CommentForm(request.POST)
+  if form.is_valid():
+    new_comment = form.save(commit=False)
+    new_comment.venue_id = venue_id
+    new_comment.save()
+  return redirect('detail', venue_id=venue_id)
 
 def signup(request):
   error_message = ''
