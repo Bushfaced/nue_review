@@ -17,4 +17,5 @@ urlpatterns = [
     path('amenities/<int:pk>/delete/', views.AmenityDelete.as_view(), name='amenities_delete'),
     path('amenities/<int:venue_id>/assoc_amenity/<int:amenity_id>/', views.assoc_amenity, name='assoc_amenity'),
     path('amenities/<int:venue_id>/unassoc_amenity/<int:amenity_id>/', views.unassoc_amenity, name='unassoc_amenity'),
+    path('venues/<int:venue_id>/add_photo/', views.add_photo, name='add_photo'),
 ]

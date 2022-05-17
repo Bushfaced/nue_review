@@ -1,31 +1,30 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  h1 {
-    padding-left: 30px;
-  }
+h1 {
+  padding-left: 30px;
+}
   
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
   
-  footer.page-footer {
-    padding-top: 0;
-    text-align: right;
-  }
+footer.page-footer {
+  padding-top: 0;
+  text-align: right;
+}
 
-  nav {
-    background-color: #292929;
-  }
+nav {
+  background-color: #292929;
+}
 
-  nav .brand-logo {
+nav .brand-logo {
   color: #ffa31a;
 }
 
-  .row {
-    width: 800px;
- 
-  }
+.row {
+  width: 800px;
+}

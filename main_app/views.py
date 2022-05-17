@@ -6,9 +6,9 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-# import os
-# import uuid
-# import boto3
+import os
+import uuid
+import boto3
 from .models import Venue, Amenity, Photo
 # Create your views here.
 
@@ -38,7 +38,7 @@ class VenueCreate(LoginRequiredMixin, CreateView):
 
 class VenueUpdate(LoginRequiredMixin, UpdateView):
     model = Venue
-    fields = ['description', 'name', 'amenities']
+    fields = ['description', 'name']
 
 class VenueDelete(LoginRequiredMixin, DeleteView):
     model = Venue
@@ -66,15 +66,28 @@ class AmenityCreate(LoginRequiredMixin, CreateView):
 
 class AmenityUpdate(LoginRequiredMixin, UpdateView):
   model = Amenity
-  fields = ['name', 'description', ]
+  fields = '__all__'
 
 class AmenityDelete(LoginRequiredMixin, DeleteView):
   model = Amenity
   success_url = '/amenities/'
 
 
-
-
+@login_required
+def add_photo(request, venue_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      bucket = os.environ['S3_BUCKET']
+      s3.upload_fileobj(photo_file, bucket, key)
+      url = f"{os.environ['S3_BASE_URL']}{bucket}/{key}"
+      Photo.objects.create(url=url, venue_id=venue_id)
+    except Exception as e:
+      print('An error occurred uploading file to S3')
+      print(e)
+  return redirect('detail', venue_id=venue_id)
 
 
 
