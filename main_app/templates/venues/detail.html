@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- <div class="container">
-
-    <div class="card-action"> -->
 <div class="row">
-  <h1>Venue</h1>
+  <h1>{{ venue.name }}</h1>
   <div class="col s6">
     <p>Name: {{ venue.name }}</p>
     <p>Description: {{ venue.description }}</p>
@@ -18,20 +15,31 @@
     {% endif %}
   </div>
 
-  <div class="col s6">
-    {% for photo in venue.photo_set.all %}
-    <img class="responsive-img card-panel" src="{{photo.url}}" alt="venue">
-    {% empty %}
-    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-    {% endfor %}
+  <div class="slider">
+    <ul class="slides">
+      {% for photo in venue.photo_set.all %}
+      <li>
+        <img class="responsive-img card-panel" src="{{photo.url}}" alt="venue-photo">
+      </li>
+        {% empty %}
+        <li>
+        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+      </li>
+      {% endfor %}
+    </ul>
+    
+  </div>
+
+  <div class="row">
+    <div class="row s12">
     <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
       <input type="submit" class="btn" value="Upload Photo">
     </form>
+    </div>
   </div>
-</div>
 
 
 <div class="row">
@@ -100,11 +108,11 @@
       </thead>
       <tbody>
         {% for comment in venue.comment_set.all %}
-          <tr>
-            <td>{{comment.date}}</td>
-            <td>{{comment.content}}</td>
-            <td>{{comment.user}}</td>
-          </tr>
+        <tr>
+          <td>{{comment.date}}</td>
+          <td>{{comment.content}}</td>
+          <td>{{comment.user}}</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
@@ -119,6 +127,11 @@
     defaultDate: new Date(),
     setDefaultDate: true,
     autoClose: true
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.slider');
+    var instances = M.Slider.init(elems);
   });
 
 </script>
