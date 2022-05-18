@@ -14,6 +14,13 @@ h1 {
 
 }
 
+.btn {
+  background-color: #2a2a2a;
+}
+
+.btn:hover {
+  background-color: #821111; 
+}
 
   
 main {
@@ -39,6 +46,17 @@ nav .brand-logo {
 
 form label {
   color: aliceblue;
+}
+
+#login {
+  text-align: center;
+  background-color: #ff00fba2;
+  max-width: 50%;
+  margin: auto;
+  box-shadow: 5px 5px 15px #7e09a9, -5px -5px 15px #7e09a9;
+  /* box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green; */
+
+  
 }
 
 
