@@ -56,4 +56,5 @@ class Comment(models.Model):
     content = models.CharField('comment', max_length=200)
     venue = models.ForeignKey(Venue, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    username = models.CharField(max_length=100)
 
