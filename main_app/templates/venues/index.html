@@ -2,16 +2,22 @@
 {% block content %}
 
 <h1>Venues</h1>
-{% for venue in venues  %}
-<div class="card">
-    <a href="{% url 'detail' venue.id %}">
-      <div class="card-content">
-        <span class="card-title">{{ venue.name }}</span>
-        <p>name: {{ venue.name }}</p>
-        <p>Description: {{ venue.description }}</p>  
+<div class="main-wrapper">
+
+  <div id="index-row" class="container">
+    {% for venue in venues  %}
+      <div class="card" id="index-card">
+        <a href="{% url 'detail' venue.id %}">
+          <div class="card-content">
+            <span class="card-title">{{ venue.name }}</span>
+            <p>name: {{ venue.name }}</p>
+            <p>Description: {{ venue.description }}</p>  
+          </div>
+        </a>
       </div>
-    </a>
+    
+    {% endfor %}
+  </div>
 </div>
-  {% endfor %}
 
 {% endblock %}
