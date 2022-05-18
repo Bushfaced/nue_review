@@ -1,0 +1,1 @@
+web: gunicorn nue_review.wsgi
