@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Amenities List</h1>
-
-{% for amenity in amenity_list %}
-  <a href="{% url 'amenities_detail' amenity.id %}">
-    <div class="card">
-        <div class="card-content">
+<h1>Amenities</h1>
+<div>
+  <div id="index-row" class="container">
+    {% for amenity in amenity_list %}
+      <div class="card" id="index-card">
+        <a href="{% url 'amenities_detail' amenity.id %}">
+          <div class="card-content">
             <span class="card-title">{{ amenity.name }}</span>
-            <p>category: {{ amenity.category }}</p>
-        </div>
-    </div>
-  </a>
-{% endfor %}
+            <p>category: {{ amenity.category }}</p> 
+          </div>
+        </a>
+      </div>
+    
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
+
+
