@@ -11,12 +11,10 @@ body {
 h1 {
   padding-left: 30px;
   color: aliceblue;
-
-}
-
-#index_h1 {
   text-align: center;
 }
+
+
 
 .btn {
   background-color: #2a2a2a;
