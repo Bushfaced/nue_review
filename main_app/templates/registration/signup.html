@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Sign Up</h1>
-<div class="container">
+<div class="container" id="signup">
+    <h1>Sign Up</h1>
 
     <p class="redt-text">{{ error_message }}</p>
     
     <form method="POST" action="{% url 'signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" class="btn" value="signup">
+        <input type="submit" class="btn" id="signup-btn" value="signup">
     </form>
 </div>
 
