@@ -32,7 +32,7 @@
 
   <div class="row">
     <div class="row s12">
-    <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel" >
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
