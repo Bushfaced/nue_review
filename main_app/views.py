@@ -102,6 +102,7 @@ def add_comment(request, venue_id):
     new_comment = form.save(commit=False)
     new_comment.venue_id = venue_id
     new_comment.user_id = request.user.id
+    new_comment.username = request.user.username
     new_comment.save()
   return redirect('detail', venue_id=venue_id)
 
