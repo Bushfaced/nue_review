@@ -1,21 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row">
-  <h1>{{ venue.name }}</h1>
-  <div class="col s6">
-    <p>Name: {{ venue.name }}</p>
-    <p>Description: {{ venue.description }}</p>
-    <p>Date: {{ venue.date }}</p>
-    <p>Amenities: {{ venue.amenity }}</p>
-    <p>Posted By: {{ venue.user }}</p>
-    {% if user == venue.user %}
-    <a href="{% url 'venues_update' venue.id %}">Edit</a>
-    <a href="{% url 'venues_delete' venue.id %}">Delete</a>
-    {% endif %}
-  </div>
+<h1>{{ venue.name }}</h1>
 
-  <div class="slider">
+  <div class="slider" id="photo-slider">
     <ul class="slides">
       {% for photo in venue.photo_set.all %}
       <li>
@@ -30,18 +18,27 @@
     
   </div>
 
-  <div class="row">
-    <div class="row s12">
+  <div class="row" id="upload-photo">
+    
     <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel" >
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
       <input type="submit" class="btn" value="Upload Photo">
     </form>
+    
+  </div>
+  <div class="row">
+    <div class="card" id="venue_detail" >    
+        <p><b>Description:</b> {{ venue.description }}</p>
+        <p><b>Date Visited:</b> {{ venue.date }}</p>
+        <p><b>Posted By:</b> {{ venue.user }}</p>
+        {% if user == venue.user %}
+        <a href="{% url 'venues_update' venue.id %}">Edit</a>
+        <a href="{% url 'venues_delete' venue.id %}">Delete</a>
+        {% endif %}      
     </div>
   </div>
-
-
 <div class="row">
   <div class="col s6">
     <h3>{{ venue.name }}'s Amenities</h3>
@@ -91,8 +88,8 @@
 </div>
 
 <div class="row">
-  <div class="col s12">
-    <form action="{% url 'add_comment' venue.id %}" method="POST">
+  <div class="col s12" id="add-comment">
+    <form id="comment-form" class="black-text" action="{% url 'add_comment' venue.id %}" method="POST">
       {% csrf_token %}
       {{ comment_form.as_p }}
       <input type="submit" class="btn" value="Add Comment">
@@ -106,7 +103,7 @@
           <th>User</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody >
         {% for comment in venue.comment_set.all %}
         <tr>
           <td>{{comment.date}}</td>

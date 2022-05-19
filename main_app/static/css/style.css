@@ -8,39 +8,72 @@ body {
  
 }
 
+.landing {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 700px; */
+  text-align: center;
+}
+
 h1 {
   padding-left: 30px;
   color: aliceblue;
   text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 25px #ff00f9, 0 0 5px pink;
 }
 
+h3, h5 {
+  color: white;
+  text-shadow: 3px 3px #000000;
+}
+
+th {
+  color: white;
+  text-decoration: 1px solid white underline;
+}
+
+td {
+  max-width: 300px; 
+  word-break: break-all;
+}
+
+
+
+.dropdown-content {
+  color: white;
+}
+
+.card {
+  background-color: #bb14d5b0;
+  color: white;
+  border: 1px solid white;
+  border-radius: 7px;
+}
 
 
 .btn {
   background-color: #2a2a2a;
-  /* padding-bottom: 30px; */
+
 }
 #signup-btn {
   background-color: #2a2a2a;
   margin-bottom: 20px;
-  /* padding-bottom: 30px; */
+
 }
 #login-btn {
   background-color: #2a2a2a;
-  /* margin-bottom: 20px; */
-  /* padding-bottom: 30px; */
+
 }
 #login-btn:hover {
   background-color: #f6dd82;
   color: black;
-  /* margin-bottom: 20px; */
-  /* padding-bottom: 30px; */
+
 }
 #signup-btn:hover {
   background-color: #f6dd82;
   color: black;
-  /* margin-bottom: 20px; */
-  /* padding-bottom: 30px; */
+
 }
 
 .btn:hover {
@@ -102,24 +135,122 @@ form label {
 }
 
 #index-card {
-  /* display: flex; */
-  background-color: #821111;
+  background-color: #6b14d5a4;
   width: 33%;
-  /* margin: 10px; */
-  
-  
-  /* height: auto; */
+  color: white;
+  text-shadow: 3px 2px 3px #000000;
 }
 
-/* .main-wrapper {
-  display: flex;
-  width: 800px;
-  height: 100px;
-  border: 2px solid greenyellow;
-  flex-wrap: wrap;
+#index-card a {
+  color: white;
+  text-align: center;
+}
+
+
+
+#venue_detail {
+  color: rgb(255, 255, 255);
+  font-size: 26px;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 5px 8px;
+  background-color: #2a2a2a;
+}
+
+#photo-slider {
+  margin: auto;
+  max-width: 80%;
+}
+
+#upload-photo {
+  width: 20rem;
+}
+/* 
+.card-panel {
+  background-color: rgba(255, 255, 255, 0.222);
 } */
 
+#add-comment {
+  color: white;
+
+}
+
+#add-comment input {
+  color: white;
+  background-color: #bb14d596;
+  border: 2px solid black;
+  border-radius: 3px;
+
+}
+
+#comment-form {
+  padding-bottom: 40px;
+}
+
+#add-comment label {
+  text-shadow: 3px 2px 3px black, 0 0 25px #ff00f9, 0 0 5px pink;
+}
+
+.venue-form {
+  width: 50%;
+  margin: auto;
+
+}
+
+#id_description {
+  background-color: #6b14d5a4;
+  min-height: 150px;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+#id_name {
+  background-color: #6b14d5a4;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+#id_date {
+  background-color: #6b14d5a4;
+  color: white;
+  border-radius: 6px;
+  border: 1px solid white;
+}
+
+#venue-btn{
+  margin-left: 50%;
+  margin-right: 0 auto;
+}
+
+.select-dropdown  {
+  background-color: #6b14d5a4;
+  color: white;
+  border-radius: 6px;
+
+}
+.select-wrapper  {
+  border: 1px solid rgb(255, 255, 255);
+  background-color: #6b14d5a4;
+  border-radius: 6px;
+}
+
+#id_category {
+  color: white;
+}
 
 
 
+#add-amenity {
+  justify-content: center;
+  margin-top: -200px;
+}
 
+#add-amenity th {
+  text-align: center;
+
+}
+
+.page-footer {
+  background-color: #292929;
+}

@@ -29,7 +29,7 @@ class Venue(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=250)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateField('Visit Date')
+    date = models.DateField('When did you go?')
     amenities = models.ManyToManyField(Amenity)
 
     def __str__(self):
