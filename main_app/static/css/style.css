@@ -9,10 +9,6 @@ body {
 }
 
 .landing {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 700px; */
   text-align: center;
 }
 
@@ -38,8 +34,6 @@ td {
   word-break: break-all;
 }
 
-
-
 .dropdown-content {
   color: white;
 }
@@ -51,25 +45,28 @@ td {
   border-radius: 7px;
 }
 
-
 .btn {
   background-color: #2a2a2a;
 
 }
+
 #signup-btn {
   background-color: #2a2a2a;
   margin-bottom: 20px;
 
 }
+
 #login-btn {
   background-color: #2a2a2a;
 
 }
+
 #login-btn:hover {
   background-color: #f6dd82;
   color: black;
 
 }
+
 #signup-btn:hover {
   background-color: #f6dd82;
   color: black;
@@ -145,8 +142,6 @@ form label {
   color: white;
   text-align: center;
 }
-
-
 
 #venue_detail {
   color: rgb(255, 255, 255);
@@ -239,8 +234,6 @@ form label {
   color: white;
 }
 
-
-
 #add-amenity {
   justify-content: center;
   margin-top: -200px;
@@ -253,4 +246,20 @@ form label {
 
 .page-footer {
   background-color: #292929;
+}
+
+.box {
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.box h4 {
+
+  padding-bottom: 30px;
+}
+
+.box .btn {
+  margin-right: 10px;
 }
