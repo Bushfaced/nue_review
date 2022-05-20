@@ -34,6 +34,8 @@
 | Description | Screenshot |
 |------------ | ------------|
 | <h3 align="center">Landing Page</h3> | <img src="https://i.imgur.com/O9qzTKM.png" width="700"/> |
+| <h3 align="center">Sign Up</h3> | <img src="https://i.imgur.com/zlTWhmt.png" width="700"/> |
+| <h3 align="center">Log In</h3> | <img src="https://i.imgur.com/Neq0VOa.png" width="700"/> |
 | <h3 align="center">Venue Index</h3> | <img src="https://i.imgur.com/9MouxwE.png" width="700"/> |
 | <h3 align="center">Amenity Index</h3> | <img src="https://i.imgur.com/W9pI1xr.png" width="700"/> |
 | <h3 align="center">Venue Detail</h3> | <img src="https://i.imgur.com/ySC2xMU.png" width="700"/> |
@@ -42,7 +44,7 @@
 | <h3 align="center">Amenity Section On Venue</h3> | <img src="https://i.imgur.com/yfvAZ8w.png" width="700"/> |
 | <h3 align="center">Add Venue</h3> | <img src="https://i.imgur.com/DM1wZVW.png" width="700"/> |
 | <h3 align="center">Add Amenity</h3> | <img src="https://i.imgur.com/TmHC0UD.png" width="700"/> |
-| <h3 align="center">Log In</h3> | <img src="https://i.imgur.com/Neq0VOa.png" width="700"/> |
+
 
 </details>
 
