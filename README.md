@@ -16,6 +16,16 @@
 <h1>:pencil: Description</h1>
 <p>NueReview is a site where users can post about their experience at venues that they have visited. Users can also post comments, photos, and amenities and to a venue. Amenities are able to be created where they will be posted to a master list where other users are able to associate them with a venue that had it during their visit. </p>
 
+<details>
+<summary> :mag_right: Wireframes & ERD </summary>
+
+| Description | Screenshot |
+|------------ | ------------|
+| <h3 align="center">Wireframes</h3> | <img src="https://i.imgur.com/ecnQJhA.png" width="700"/> |
+| <h3 align="center">ERD</h3> | <img src="https://i.imgur.com/uvWszAK.png" width="700"/> |
+
+</details>
+
 
 <details>
 <summary> :gear: Functionality</summary>
@@ -32,15 +42,10 @@
 | <h3 align="center">Add Venue</h3> | <img src="https://i.imgur.com/DM1wZVW.png" width="700"/> |
 | <h3 align="center">Add Amenity</h3> | <img src="https://i.imgur.com/TmHC0UD.png" width="700"/> |
 | <h3 align="center">Log In</h3> | <img src="https://i.imgur.com/Neq0VOa.png" width="700"/> |
-| <h3 align="center">Sign Up</h3> | <img src="https://i.imgur.com/zlTWhmt.png" width="700"/> |
-
-
-
-
-
-
 
 </details>
+
+
 
 ## :computer: Technologies Used
 
@@ -55,6 +60,7 @@
 ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
 ![Github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 ![VSCode](https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+
 
 <h2> :fire: Getting Started </h2>
 
