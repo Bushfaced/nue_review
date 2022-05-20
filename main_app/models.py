@@ -3,16 +3,12 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import date
 
-
-# Create your models here.
-
 AMENITY_CATEGORY = (
   ('Health', 'Health'),
   ('Food', 'Food'),
   ('Drinks', 'Drinks'),
   ('Misc', 'Misc'),
 )
-
 
 class Amenity(models.Model):
     name = models.CharField(max_length=100)

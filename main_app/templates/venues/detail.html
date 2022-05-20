@@ -2,43 +2,41 @@
 {% block content %}
 
 <h1>{{ venue.name }}</h1>
-
-  <div class="slider" id="photo-slider">
-    <ul class="slides">
-      {% for photo in venue.photo_set.all %}
-      <li>
-        <img class="responsive-img card-panel" src="{{photo.url}}" alt="venue-photo">
-      </li>
-        {% empty %}
-        <li>
-        <div class="card-panel teal-text center-align">No Photos Uploaded</div>
-      </li>
-      {% endfor %}
-    </ul>
-    
+<!-- Photo Area -->
+<div class="slider" id="photo-slider">
+  <ul class="slides">
+    {% for photo in venue.photo_set.all %}
+    <li>
+      <img class="responsive-img card-panel" src="{{photo.url}}" alt="venue-photo">
+    </li>
+    {% empty %}
+    <li>
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="row" id="upload-photo">
+  <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    {% csrf_token %}
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+  </form>
+</div>
+<!-- Venue Specific -->
+<div class="row">
+  <div class="card" id="venue_detail">
+    <p><b>Description:</b> {{ venue.description }}</p>
+    <p><b>Date Visited:</b> {{ venue.date }}</p>
+    <p><b>Posted By:</b> {{ venue.user }}</p>
+    {% if user == venue.user %}
+    <a href="{% url 'venues_update' venue.id %}">Edit</a>
+    <a href="{% url 'venues_delete' venue.id %}">Delete</a>
+    {% endif %}
   </div>
-
-  <div class="row" id="upload-photo">
-    
-    <form action="{% url 'add_photo' venue.id %}" enctype="multipart/form-data" method="POST" class="card-panel" >
-      {% csrf_token %}
-      <input type="file" name="photo-file">
-      <br><br>
-      <input type="submit" class="btn" value="Upload Photo">
-    </form>
-    
-  </div>
-  <div class="row">
-    <div class="card" id="venue_detail" >    
-        <p><b>Description:</b> {{ venue.description }}</p>
-        <p><b>Date Visited:</b> {{ venue.date }}</p>
-        <p><b>Posted By:</b> {{ venue.user }}</p>
-        {% if user == venue.user %}
-        <a href="{% url 'venues_update' venue.id %}">Edit</a>
-        <a href="{% url 'venues_delete' venue.id %}">Delete</a>
-        {% endif %}      
-    </div>
-  </div>
+</div>
+<!-- Available amenities -->
 <div class="row">
   <div class="col s6">
     <h3>{{ venue.name }}'s Amenities</h3>
@@ -62,7 +60,6 @@
     <h5>No Amenities Yet! :(</h5>
     {% endif %}
   </div>
-  <!-- Available amenities will come after this line -->
   <div class="col s6">
     <h3>Available Amenities</h3>
     {% if amenities.count %}
@@ -86,7 +83,7 @@
     {% endif %}
   </div>
 </div>
-
+<!-- comments section-->
 <div class="row">
   <div class="col s12" id="add-comment">
     <form id="comment-form" class="black-text" action="{% url 'add_comment' venue.id %}" method="POST">
@@ -103,7 +100,7 @@
           <th>User</th>
         </tr>
       </thead>
-      <tbody >
+      <tbody>
         {% for comment in venue.comment_set.all %}
         <tr>
           <td>{{comment.date}}</td>
@@ -117,7 +114,6 @@
 </div>
 
 <script>
-
   const dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {
     format: 'yyyy-mm-dd',
@@ -126,11 +122,10 @@
     autoClose: true
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.slider');
     var instances = M.Slider.init(elems);
   });
-
 </script>
 
 {% endblock %}

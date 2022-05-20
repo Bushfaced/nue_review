@@ -3,9 +3,7 @@
 
 <div class="container" id="signup">
     <h1>Sign Up</h1>
-
     <p class="redt-text">{{ error_message }}</p>
-    
     <form method="POST" action="{% url 'signup' %}">
         {% csrf_token %}
         {{ form.as_p }}

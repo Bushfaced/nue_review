@@ -1,42 +1,41 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>NueReview</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <title>NueReview</title>
 </head>
+
 <body>
-    <header class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <ul>
-                    <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;NueReview</a></li>
-                </ul>
-                <ul class="right">
-                  {% if user.is_authenticated %}
-                    <li><a href="{% url 'venues_create' %}">Add a Venue</a></li>
-                    <li><a href="{% url 'amenities_create' %}">Add Amenity</a></li>
-                    <li><a href="{% url 'index' %}">View All Venues</a></li>
-                    <li><a href="{% url 'amenities_index' %}">View All Amenities</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>        
-                  {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                  {% endif %}
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    {% block content %}
-    {% endblock%}
-
-
+  <header class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <ul>
+          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;NueReview</a></li>
+        </ul>
+        <ul class="right">
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'venues_create' %}">Add a Venue</a></li>
+          <li><a href="{% url 'amenities_create' %}">Add Amenity</a></li>
+          <li><a href="{% url 'index' %}">View All Venues</a></li>
+          <li><a href="{% url 'amenities_index' %}">View All Amenities</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+          {% else %}
+          <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </header>
+  {% block content %}
+  {% endblock%}
 </body>
 
 </html>

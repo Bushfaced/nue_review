@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
 <div class="card-panel" id="login">
     <h1>Log In</h1>
 
@@ -10,11 +9,8 @@
         {{ form.as_p }}
         <input type="submit" class="btn" id="login-btn" value="login">
         <input type="hidden" class="next" value="{{ next }}">
-        
+
     </form>
 </div>
-
-
-
 
 {% endblock %}

@@ -11,7 +11,7 @@ import uuid
 import boto3
 from .models import Venue, Amenity, Photo
 from .forms import CommentForm
-# Create your views here.
+
 
 def home(request):
     return render(request, 'home.html')
@@ -19,7 +19,6 @@ def home(request):
 @login_required
 def venues_index(request):
    venues = Venue.objects.all()
-  #  venues = Venue.objects.filter(user=request.user)
    return render(request, 'venues/index.html', {'venues': venues})
 
 @login_required
@@ -33,7 +32,6 @@ def venues_detail(request, venue_id):
       'venue': venue,
       'amenities': amenities_venue_doesnt_have
   })
-
 
 class VenueCreate(LoginRequiredMixin, CreateView):
     model = Venue
@@ -77,7 +75,6 @@ class AmenityUpdate(LoginRequiredMixin, UpdateView):
 class AmenityDelete(LoginRequiredMixin, DeleteView):
   model = Amenity
   success_url = '/amenities/'
-
 
 @login_required
 def add_photo(request, venue_id):

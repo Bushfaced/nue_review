@@ -5,7 +5,6 @@ body {
   background-image: url('https://i.imgur.com/DynJPDv.png');
   background-size: cover;
   background-position: center;
- 
 }
 
 .landing {
@@ -47,37 +46,31 @@ td {
 
 .btn {
   background-color: #2a2a2a;
-
 }
 
 #signup-btn {
   background-color: #2a2a2a;
   margin-bottom: 20px;
-
 }
 
 #login-btn {
   background-color: #2a2a2a;
-
 }
 
 #login-btn:hover {
   background-color: #f6dd82;
   color: black;
-
 }
 
 #signup-btn:hover {
   background-color: #f6dd82;
   color: black;
-
 }
 
 .btn:hover {
   background-color: #821111; 
 }
 
-  
 main {
   flex: 1 0 auto;
 }
@@ -110,7 +103,6 @@ form label {
   max-width: 50%;
   margin: auto;
   box-shadow: 5px 5px 15px #7e09a9, -5px -5px 15px #7e09a9;
-  
 }
 
 #signup {
@@ -119,7 +111,6 @@ form label {
   max-width: 50%;
   margin: auto;
   box-shadow: 5px 5px 15px #7e09a9, -5px -5px 15px #7e09a9;
-  
 }
 
 #index-row{
@@ -128,7 +119,6 @@ form label {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
-
 }
 
 #index-card {
@@ -166,7 +156,6 @@ form label {
 
 #add-comment {
   color: white;
-
 }
 
 #add-comment input {
@@ -174,7 +163,6 @@ form label {
   background-color: #bb14d596;
   border: 2px solid black;
   border-radius: 3px;
-
 }
 
 #comment-form {
@@ -188,7 +176,6 @@ form label {
 .venue-form {
   width: 50%;
   margin: auto;
-
 }
 
 #id_description {
@@ -222,8 +209,8 @@ form label {
   background-color: #6b14d5a4;
   color: white;
   border-radius: 6px;
-
 }
+
 .select-wrapper  {
   border: 1px solid rgb(255, 255, 255);
   background-color: #6b14d5a4;
@@ -241,7 +228,6 @@ form label {
 
 #add-amenity th {
   text-align: center;
-
 }
 
 .page-footer {
